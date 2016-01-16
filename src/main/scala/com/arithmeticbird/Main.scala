@@ -4,7 +4,6 @@ import com.arithmeticbird.example.Cat
 import com.arithmeticbird.monoid.Add
 
 
-
 //Type class example
 object Main extends App {
   val cat = com.arithmeticbird.example.Cat("Tracy", 4, "black")
@@ -60,6 +59,28 @@ object Main extends App {
     println(success(11) map (_ * 2))  //
   }
 
+  def monadExample() = {
+    import scalaz.Monad
+    import scalaz.std.option._
+
+    //convert to option of ...
+    val maybeX = Monad[Option].tuple3(some(1), some("hi"), some(4.5))
+    println(maybeX)
+
+    //
+    import com.arithmeticbird.monad.Result._
+    import scalaz.syntax.monad._
+
+    val r = for {
+      a <- success(6)
+      b <- warning(-1, "-ve number")
+    } yield a+b
+
+    println(r)
+
+
+  }
+
   simplePrint(cat)
 
   scalazPrint(cat)
@@ -67,5 +88,7 @@ object Main extends App {
   monoidExample()
 
   functorExample()
+
+  monadExample()
 
 }
