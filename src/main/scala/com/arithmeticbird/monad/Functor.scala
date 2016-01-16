@@ -1,6 +1,6 @@
 package com.arithmeticbird.monad
 
-object Fuctor {
+object Functor {
   //A monad is a functor. write map in terms of flatmap
 
   //Say we have two functions flatMap and point
