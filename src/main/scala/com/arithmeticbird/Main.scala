@@ -3,6 +3,8 @@ package com.arithmeticbird
 import com.arithmeticbird.example.Cat
 import com.arithmeticbird.monoid.Add
 
+
+
 //Type class example
 object Main extends App {
   val cat = com.arithmeticbird.example.Cat("Tracy", 4, "black")
@@ -40,8 +42,28 @@ object Main extends App {
     println(Add.add(lOrder))
   }
 
+  def functorExample() = {
+    import scalaz.Functor
+    import scalaz.std.list._
+    val n = Functor[List].map(List(4,5,8,11))(x=>x*2)
+    println(n)
+
+    //lifting a function
+    import scalaz.std.option._
+    val lifted: (Option[Int]) => Option[Int] = Functor[Option].lift((x:Int) => x + 2)
+
+    // Creating a new functor and then using it ...
+    import com.arithmeticbird.functor.Result._
+
+    import scalaz.syntax.functor._
+
+    println(success(11) map (_ * 2))  //
+  }
+
   simplePrint(cat)
   scalazPrint(cat)
   monoidExample()
+
+  functorExample()
 
 }
