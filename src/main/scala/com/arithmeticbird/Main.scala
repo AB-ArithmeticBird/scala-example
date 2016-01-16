@@ -48,7 +48,7 @@ object Main extends App {
     val n = Functor[List].map(List(4,5,8,11))(x=>x*2)
     println(n)
 
-    //lifting a function
+    //lifting a function into Functor
     import scalaz.std.option._
     val lifted: (Option[Int]) => Option[Int] = Functor[Option].lift((x:Int) => x + 2)
 
@@ -61,7 +61,9 @@ object Main extends App {
   }
 
   simplePrint(cat)
+
   scalazPrint(cat)
+
   monoidExample()
 
   functorExample()
