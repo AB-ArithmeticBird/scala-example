@@ -28,8 +28,12 @@ object Main extends App {
     val l = List(4,5,6,7,8)
     println(Add.add(l))
 
-    //val maybeIntList = List(Option(1), Option(11), Option(3),Option(7), None, Option(1))
-    //println(Add.add(maybeIntList))
+    import scalaz.std.option._
+
+    val maybeInt1 = Option(1)
+    val maybeInt2 = Option(6)
+    val maybeIntList = List(maybeInt1,maybeInt2)
+    println(Add.add(maybeIntList))
 
     import com.arithmeticbird.monoid.Order
     val lOrder = List(Order(1,2),Order(1,8),Order(6,2))
