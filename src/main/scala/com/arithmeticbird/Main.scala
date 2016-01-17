@@ -1,6 +1,7 @@
 package com.arithmeticbird
 
 import com.arithmeticbird.example.{PrintSyntax, Cat}
+import com.arithmeticbird.monadtransformer.LoadServiceInterpreter
 import com.arithmeticbird.monoid.Add
 
 
@@ -81,6 +82,11 @@ object Main extends App {
 
   }
 
+  def monadTransformerExample() = {
+    LoadServiceInterpreter.report(LoadServiceInterpreter
+      .getMeanLoad(List("a.arithmeticbird.com", "b.arithmeticbird.com")))
+  }
+
   simplePrint(cat)
 
   scalazPrint(cat)
@@ -90,5 +96,7 @@ object Main extends App {
   functorExample()
 
   monadExample()
+
+  monadTransformerExample()
 
 }
