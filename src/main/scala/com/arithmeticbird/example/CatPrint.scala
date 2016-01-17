@@ -1,7 +1,5 @@
 package com.arithmeticbird.example
 
-import com.arithmeticbird.Printable
-
 object CatPrint {
   implicit val catPrintable = new Printable[Cat] {
 

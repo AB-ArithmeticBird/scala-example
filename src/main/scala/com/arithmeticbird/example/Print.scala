@@ -1,5 +1,4 @@
-package com.arithmeticbird
-
+package com.arithmeticbird.example
 
 object Print {
   def format[A](a: A)(implicit p: Printable[A]): String = {

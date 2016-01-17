@@ -1,6 +1,6 @@
 package com.arithmeticbird
 
-import com.arithmeticbird.example.Cat
+import com.arithmeticbird.example.{PrintSyntax, Cat}
 import com.arithmeticbird.monoid.Add
 
 

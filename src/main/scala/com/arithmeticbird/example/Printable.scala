@@ -1,4 +1,4 @@
-package com.arithmeticbird
+package com.arithmeticbird.example
 
 trait Printable[A] {
   def format(a: A): String
