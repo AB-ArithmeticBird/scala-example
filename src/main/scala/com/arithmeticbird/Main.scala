@@ -5,7 +5,6 @@ import com.arithmeticbird.monadtransformer.LoadServiceInterpreter
 import com.arithmeticbird.monoid.Add
 
 
-//Type class example
 object Main extends App {
   val cat = com.arithmeticbird.example.Cat("Tracy", 4, "black")
 
